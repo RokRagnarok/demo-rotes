@@ -1,14 +1,60 @@
-import React, {useState, useEffect}from 'react';
+import React, {useState, useEffect} from 'react';
 import Character from './Character';
 
-export default function List(){
+export default function List() {
+    const [characters, setCharacter] = useState([]);
+    const [loading, setLoading] = useState(true);
+    
+const [currentPageUrl, setCurrentPageUrl] = useState("https://rickandmortyapi.com/api/character");
+const [nextPageUrl, setNextPageUrl] = useState();
+const[prevPageUrl, setPrevPageUrl] = useState();
+const [pages, setPages] = useState ();
 
-const [characters, setCharacter] = useState([]);
-async function fetchData(){
-    const data = await fetch("https://rickandmortyapi.com/api/character");
-    const {result} = await data.json;
-    setCharacter(result)
+    useEffect(() => {
+        const  url = currentPageUrl;
+        async function fetchData() {
+            const data = await fetch(url);
+            const {results, info} = await data.json();
+            setCharacter(results);
+            setNextPageUrl(info.next);
+            setLoading(false);
+            setPrevPageUrl(info.prev);
+            setPages(info.pages);
+        }
+
+        fetchData();
+    }, [currentPageUrl]);
+
+    const nextPage = () =>{
+        setCurrentPageUrl(nextPageUrl);
+    }
+const prevPage = () =>{
+    setCurrentPageUrl(prevPageUrl);
+} 
+
+const goToPage = (num) =>{
+    setCurrentPageUrl(`https://rickandmortyapi.com/api/character?page=${num}`);
 }
-
-
+    return (
+        <div>
+            <h2>Characters</h2>
+            <div className="row">
+                {
+                    loading?(
+                     <div>loading...</div>
+                    )
+                    :
+                   ( 
+                characters.map((character) => (
+                    <Character
+                        key={character.id}
+                        name={character.name}
+                        origin={character.origin}
+                        image={character.image}
+                    />
+                )))
+                }
+            </div>
+        </div>
+    )
 }

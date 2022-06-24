@@ -6,6 +6,7 @@ import Error404 from './Components/Error/404';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 import Notes from './Components/Notes/Notes';
+import Character from './Components/Character/Character';
 const AppRoutes = () => (
 
 
@@ -17,6 +18,7 @@ const AppRoutes = () => (
             <Route path='*'element ={<Error404/>}  />
             <Route path='/notes'element ={<Notes/>}  />
             <Route path='/notes/:noteId'element ={<Notes/>}  />
+            <Route path='/character'element ={<Character/>}  />
         </Routes>
    </App>
 )

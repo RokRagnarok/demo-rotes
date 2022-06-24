@@ -23,6 +23,7 @@ const {title, url} = props;
             <li><Link to='/about'>about</Link> </li>
             <li><Link to='/contact'>contact</Link> </li>
             <li><Link to='/notes'>notes</Link> </li>
+            <li><Link to='/Character'/>Bienvenido Sr Ragnarok</li>
           </ul>
           
           </header>

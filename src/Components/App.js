@@ -12,7 +12,7 @@ function App(props) {
     <div className="App">
       <Header title="Routing"/>
       <Content >
-        
+        {/* Components */}
         {props.children}
       </Content>
       <Footer />
@@ -26,5 +26,3 @@ App.propTypes = {
 }
 
 export default App;
-
-
