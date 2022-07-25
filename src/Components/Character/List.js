@@ -35,15 +35,7 @@ export default function List() {
         fetchData();
     }, [currentPageUrl]);
 
-    //Next Page
-    const nextPage = () => {
-        setCurrentPageUrl(nextPageUrl);
-    }
-
-    //Prev Page
-    const prevPage = () => {
-        setCurrentPageUrl(prevPageUrl);
-    }
+   
 
     //Choose Page
     const goToPage= (num) => {
@@ -72,13 +64,9 @@ export default function List() {
                     renderItem={(item) => (
                         <PaginationItem
                           component={Link}
-                          to={`/inbox${item.page === 1 ? '' :  `?page=${item.page}`}`}
+                          to={`/inbox${item.pages === 1 ? 'https://rickandmortyapi.com/api/character?page=$' :  `?page=${item.pages}`}`}
                           {...item}
-                          
-                        />
-
-
-                        
+                        /> 
                       )}
                     
                 />

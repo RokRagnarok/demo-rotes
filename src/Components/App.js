@@ -3,14 +3,13 @@ import Header from '../shared/layout/Header';
 import './App.css';
 import Footer from '../shared/layout/Footer';
 import Content from '../shared/layout/Content';
-
 import {element} from 'prop-types';
 
 
 function App(props) {
   return (
     <div className="App">
-      <Header title="Routing"/>
+      <font color="blue"><Header title="You Can Do it"/></font>
       <Content >
         {/* Components */}
         {props.children}

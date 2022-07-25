@@ -34,8 +34,12 @@ const Notes = () => {
                             (selectedNote)?
                             <div>
                                 <h1>{note.title}</h1>
-                                <h1>{note.titulo}</h1>
+                                <h2>{note.titulo}</h2>
                                 <p>{note.description}</p>
+                                <font color="orange"><p>{note.description2}</p></font>
+                                <font color="blue"><p>{note.description3}</p></font>
+                                <font color="white"><p>{note.description4}</p></font>
+                                <font color="black"><p>{note.description5}</p></font>
                             </div>
                             :
                             <Link to={`/notes/${note.id}`}>{note.title}</Link>
@@ -50,7 +54,8 @@ const Notes = () => {
    
     return (
         <div className = "Notes">
-            <h1>Notes</h1>
+            <h1>Rutinas</h1>
+            <h2>Aqui se mostraran los tipos de rutinas</h2>
             {renderNotes(selectedNote || notes )}
         </div>
     );

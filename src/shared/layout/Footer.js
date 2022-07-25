@@ -8,7 +8,7 @@ const Footer =() => {
         }
         return (
             <footer>
-                &copy; Web2 {new Date().getFullYear()}
+                &copy; Nunca sabras si nunca intentas {new Date().getFullYear()}
             </footer>
         );
     

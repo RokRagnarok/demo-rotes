@@ -1,21 +1,24 @@
 .Notes ul{
 list-style-type: none;
-margin: 0;
-margin-bottom: 20px;
-padding: 0;
+margin: 70px;
+margin-bottom: 120px;
+padding: 60px;
 
 }
 
 .Notes ul li{
-    padding: 20px;
+    background-color: rgba(238, 255, 0, 0.749);
+    padding: 70px;
 }
 
 .Notes a {
-    color: rgba(51, 255, 0, 0.749);
+    color: rgba(0, 0, 0, 0.749);
     text-decoration: none;
+    
 }
 
 .Notes a:hover{
-    color: red;
+    color: rgb(0, 89, 255);
     text-decoration: none;
+
 }

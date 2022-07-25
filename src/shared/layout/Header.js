@@ -13,17 +13,20 @@ const {title, url} = props;
     
         return (
           <header className="App-Header">
-              <a href={url}>
-        <img src={logo} className="App-logo" alt="logo" />
-        </a>
+       
    <h1>{title}</h1>
           
           <ul>
             <li><Link to='/'>Home</Link> </li>
-            <li><Link to='/about'>about</Link> </li>
-            <li><Link to='/contact'>contact</Link> </li>
-            <li><Link to='/notes'>notes</Link> </li>
-            <li><Link to='/Character'/>Bienvenido Sr Ragnarok</li>
+            <font color="red"><li><Link to='/ChartHome'>Graficas de peso</Link> </li></font>
+            <font color="green"><li><Link to='/notes'>Rutinas</Link> </li></font>
+            <font color="yellow"><li><Link to='/Todo'>Metas</Link></li></font>
+            <li><Link to='/Casa'>Motivaciones</Link></li>
+            <li><Link to='/Pomodoro'>Cronometro</Link></li>
+            <li><Link to='/Forms'>Registros</Link></li>
+            
+
+            
           </ul>
           
           </header>
